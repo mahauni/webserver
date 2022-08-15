@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie-edge">
+        <title> Document </title>
+    </head>
+
+    <body>
+        <h1>The select form attribute</h1>
+
+        <form action="/postend" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" name="nome"><br><br>
+            <select name="sex">
+                {% for o in sexData %}
+                <option value="{{ o.sex }}">{{ o.sex }}</option>
+                {% endfor %}
+            </select><br><br>
+            <label for="email">Email:</label>
+            <input type="text" name="email"><br><br>
+            
+            <label for="hair">Choose a hair:</label>
+            <select name="hair">
+                {% for o in hairData %}
+                <option value="{{ o.hair }}">{{ o.hair }}</option>
+                {% endfor %}
+            </select><br><br>
+            <label for="acce">Choose a sex:</label>
+            <select name="acce">
+                {% for o in accData %}
+                <option value="{{ o.acc }}">{{ o.acc }}</option>
+                {% endfor %}
+            </select><br><br>
+            <br>
+            <input type="submit">
+        </form>
+    </body>
+</html>
